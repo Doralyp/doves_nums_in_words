@@ -10,4 +10,8 @@ describe "numbers in words" do
   it "should handle compound words" do
     expect(nums_in_words(73)).to eq("seventy three")
   end
+
+  it "should handle three digit compound words" do
+    expect(nums_in_words(217)).to eq("two hundred seventeen")
+  end
 end

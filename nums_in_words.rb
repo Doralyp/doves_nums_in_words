@@ -71,15 +71,18 @@ TENS = {
 
 def nums_in_words(num)
   return WEIRD[num] if WEIRD[num]
+  return two_digit_num_to_word(num) if num.to_s.size == 2
 
-  if num.to_s.size == 2
-    num_word = []
-    WEIRD.reverse_each do |n, word|
-      if num >= n && n != 0
-        num -= n
-        num_word.push(word)
-      end
+  
+end
+
+def two_digit_num_to_word(num)
+  num_word = []
+  WEIRD.reverse_each do |n, word|
+    if num >= n && n != 0
+      num -= n
+      num_word.push(word)
     end
-    return num_word.join(" ")
   end
+  return num_word.join(" ")
 end
