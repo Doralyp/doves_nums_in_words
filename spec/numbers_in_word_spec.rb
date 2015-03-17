@@ -7,4 +7,7 @@ describe "numbers in words" do
     end
   end
 
+  it "should handle compound words" do
+    expect(nums_in_words(73)).to eq("seventy three")
+  end
 end
