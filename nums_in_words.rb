@@ -73,7 +73,13 @@ def nums_in_words(num)
   return WEIRD[num] if WEIRD[num]
   return two_digit_num_to_word(num) if num.to_s.size == 2
 
-  
+
+end
+
+def tens_power(num)
+  num_digits = Math.log(num, 10).floor
+  num_digits -= 1 until TENS[num_digits]
+  num_digits
 end
 
 def two_digit_num_to_word(num)

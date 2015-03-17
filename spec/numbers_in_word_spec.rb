@@ -1,5 +1,12 @@
 require_relative '../nums_in_words'
 
+describe "tens power" do
+  it "should return the right power of ten" do
+    expect(tens_power(10765)).to eq(3)
+    expect(tens_power(10_000_765)).to eq(6)
+  end
+end
+
 describe "numbers in words" do
   it "should return exceptional english words" do
     WEIRD.each do |num, word|
