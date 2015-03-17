@@ -21,4 +21,8 @@ describe "numbers in words" do
   it "should handle three digit compound words" do
     expect(nums_in_words(217)).to eq("two hundred seventeen")
   end
+
+  it "should handle a fucking huge number" do
+    expect(nums_in_words(123_456_789_123)).to eq("one hundred twenty three billion four hundred fifty six million seven hundred eighty nine thousand one hundred twenty three")
+  end
 end

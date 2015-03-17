@@ -73,7 +73,13 @@ def nums_in_words(num)
   return WEIRD[num] if WEIRD[num]
   return two_digit_num_to_word(num) if num.to_s.size == 2
 
+  exponent = tens_power(num)
+  ten_word = TENS[exponent]
+  ten_num = 10 ** exponent
 
+  div, mod = num.divmod(ten_num)
+
+  [nums_in_words(div), ten_word, nums_in_words(mod)].join(" ")
 end
 
 def tens_power(num)
